@@ -8,10 +8,6 @@ import { setBeatNote } from '../../actions/beat';
 
 var synth = new Tone.Synth().toMaster();
 
-const playNote = (note) => {
-  synth.triggerAttackRelease(note, '8n');
-};
-
 let Key = ({ dispatch, note }) => {
   return (
     <div className="key" onClick={dispatch.bind(this, setBeatNote(note))}>
