@@ -1,0 +1,37 @@
+.synthesizer {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 3px;
+    margin: 30px;
+
+    .beats-container {
+        margin-top: 30px;
+        display: flex;
+    }
+
+    .keys-container {
+        margin-top: 30px;
+        display: flex;
+    }
+
+    button {
+        height: 40px;
+        border: 1px solid #ddd;
+        line-height: 40px;
+        padding: 0 15px;
+        font-size: 18px;
+        color: #ddd;
+        background: transparent;
+        margin-top: 15px;
+        cursor: pointer;
+        transition: all .2s;
+        font-weight: 200;
+        outline: none;
+
+        &:hover {
+            background-color: #fff;
+            color: #000;
+            border-radius: 2px;
+        }
+    }
+}

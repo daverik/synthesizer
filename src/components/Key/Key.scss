@@ -1,0 +1,16 @@
+@import '../../styles/config';
+
+.key {
+    height: 60px;
+    border: 1px solid lighten($bg-color, 20%);
+    transition: background .2s;
+    flex: 1 1 auto;
+    line-height: 60px;
+    color: #999;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+        background: #fff;
+    }
+}
