@@ -4,8 +4,17 @@
     border-radius: 3px;
     margin: 30px;
 
+    .synthesizer-name {
+        padding: 20px;
+        font-size: 12px;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 10px;
+        font-weight: 100;
+    }
+
     .beats-container {
-        margin-top: 30px;
+        margin-top: 20px;
         display: flex;
     }
 

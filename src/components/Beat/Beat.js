@@ -12,8 +12,22 @@ let Beat = ({ dispatch, ...props }) => {
     dispatch(setCurrentBeat(props.id));
   };
 
+  let classes = '';
+
+  if (props.on) {
+    classes += ' on';
+  }
+
+  if (props.selected) {
+    classes += ' selected';
+  }
+
+  if (props.isPlaying) {
+    classes += ' is-playing';
+  }
+
   return (
-    <div className={`beat ${props.on ? 'on' : ''}` } onClick={toggleAndSet}>
+    <div className={`beat ${classes}` } onClick={toggleAndSet}>
       { props.note }
     </div>
   );
@@ -25,6 +39,7 @@ const mapStateToProps = (state, props) => {
   return {
     note: beat.note,
     selected: state.currentBeat === props.id,
+    isPlaying: state.currentPlayingBeat === props.id,
     on: beat.on
   };
 };

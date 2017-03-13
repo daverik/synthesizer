@@ -1,5 +1,7 @@
 @import '../../styles/config';
 
+$selected-color: #b16e6e;
+
 .beat {
     height: 40px;
     border: 1px solid lighten($bg-color, 20%);
@@ -9,13 +11,37 @@
     line-height: 40px;
     cursor: pointer;
 
+    &.is-playing {
+        border-color: #fff;
+    }
+
+    &.selected {
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: calc(50% - 5px);
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            border: 1px solid #fff;
+        }
+    }
+
     &.on {
         background: #ddd;
         color: #000;
+
+        &.selected {
+            &:before {
+                border-color: #000;
+            }
+        }
     }
 
     &:hover {
-        background: #fff;
-        color: #000;
+        border-color: #fff;
     }
 }

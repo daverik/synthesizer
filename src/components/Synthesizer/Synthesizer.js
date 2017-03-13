@@ -11,6 +11,7 @@ let Synthesizer = ({ dispatch, keys, beats, isPlaying }) => {
 
   return (
     <div className="synthesizer">
+      <div className="synthesizer-name">Synthesizer</div>
       <div className="beats-container">
         {beats.map((beat) => {
           return (<Beat key={beat.id} id={beat.id} />);

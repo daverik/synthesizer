@@ -1,8 +1,15 @@
-import { SET_CURRENT_BEAT, SET_BEAT_NOTE, TOGGLE_BEAT_ON } from '../constants';
+import { SET_CURRENT_BEAT, SET_BEAT_NOTE, TOGGLE_BEAT_ON, SET_CURRENT_PLAYING_BEAT } from '../constants';
 
 export const setCurrentBeat = (beatId) => {
     return {
         type: SET_CURRENT_BEAT,
+        beatId
+    }
+}
+
+export const setCurrentPlayingBeat = (beatId) => {
+    return {
+        type: SET_CURRENT_PLAYING_BEAT,
         beatId
     }
 }

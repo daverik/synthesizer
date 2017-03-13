@@ -11,6 +11,10 @@
     cursor: pointer;
 
     &:hover {
+        border-color: #fff;
+    }
+
+    &:active {
         background: #fff;
     }
 }

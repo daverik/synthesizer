@@ -1,3 +1,5 @@
+import { store } from '../store';
+import { setCurrentPlayingBeat } from '../actions/beat';
 import Tone from 'tone';
 
 const synth = new Tone.Synth({
@@ -14,12 +16,17 @@ const synth = new Tone.Synth({
 let loop;
 
 export const playPattern = (beats) => {
-  loop = new Tone.Sequence(function (time, note) {
+  loop = new Tone.Sequence((time, { note, index }) => {
+    store.dispatch(setCurrentPlayingBeat(index));
+
     if (note) {
       synth.triggerAttackRelease(note, '8n', time);
     }
-  }, beats.map(beat => {
-    return beat.on ? beat.note : false;
+  }, beats.map((beat, index) => {
+    return {
+      note: beat.on ? beat.note : false,
+      index
+    }
   }), '8n');
 
   loop.loop = true;
