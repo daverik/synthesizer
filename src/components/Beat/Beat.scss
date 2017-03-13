@@ -39,6 +39,10 @@ $selected-color: #b16e6e;
                 border-color: #000;
             }
         }
+
+        &:hover {
+            background: #fff;
+        }
     }
 
     &:hover {
